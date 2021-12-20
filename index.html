@@ -19,7 +19,7 @@
 	    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
 	  })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js', {
 	    environment: 'euc1',
-	    deploymentId: '1d4cc368-adaf-4e90-9be1-860714b0e41f'
+	    deploymentId: deploymentID
 	  });
 	</script>
 	
@@ -68,6 +68,14 @@
 	    localStorage.clear();
 	    window.location.reload();
 	  }
+	
+	   function changeDeploymentUK(){
+	     var deploymentID = "1d4cc368-adaf-4e90-9be1-860714b0e41f";
+	  }
+	
+	   function changeDeploymentID(){
+	     var deploymentID = "82b31bd4-5e0d-49e5-a880-b0ad08647d7b";
+	   }
 		
 	</script>
 	
@@ -96,5 +104,10 @@
   Test button - Clear and reload page
 </button>
 	
+<button id = "qa-product-en" onclick="changeDeploymentUK()">QA PRODUCT EN</button>
+<button id = "qa-product-it" onclick="changeDeploymentIT()">QA PRODUCT IT</button>
+<button id = "qa-product-es" onclick="changeDeployment()">QA PRODUCT ES</button>
+<button id = "qa-product-pt" onclick="changeDeployment()">QA PRODUCT PT</button>
+
 </body>
 </html>
