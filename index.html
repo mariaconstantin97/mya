@@ -7,9 +7,21 @@
 			var chromeLanguage = window.navigator.userLanguage || window.navigator.language;
 			document.getElementById("browserlanguage").innerHTML = chromeLanguage;
 		}
+		
+		function changeDeploymentID(){
+			var ukProduct = document.getElementById("product-qa-en");
+			var itProduct = document.getElementById("product-qa-it");
+			
+			if (ukProduct.clicked == true) {
+				var deploymentID = "1d4cc368-adaf-4e90-9be1-860714b0e41f";
+			} else if (itProduct.clicked == true){
+				var deploymentID = "82b31bd4-5e0d-49e5-a880-b0ad08647d7b";
+			}
+		}
+		changeDeploymentID();
 	</script>
+	
 	<script type="text/javascript" charset="utf-8">
-	  let deploymentID;
 	  (function (g, e, n, es, ys) {
 	    g['_genesysJs'] = e;
 	    g[e] = g[e] || function () {
@@ -20,21 +32,18 @@
 	    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
 	  })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js', {
 	    environment: 'euc1',
-	    deploymentId: '1d4cc368-adaf-4e90-9be1-860714b0e41f'
+	    deploymentId: deploymentID
 	  });
-	</script>
-	
-	<script type="text/javascript" charset="utf-8">
+		
 	  Genesys("subscribe", "Launcher.ready" , function(o){
 	    console.log("the launcher is ready!");
 	  });
 	</script>
 </head>
+	
 <body onLoad = "loadVariables()">
 	
 	<script type="text/javascript">
-	
-	var testVariable = "TestAttribute";
 	  
 	function toggleMessenger(){
 	    console.log("toggle messenger button clicked");
@@ -60,14 +69,6 @@
 	    Genesys("command", "Journey.record", {
 	       eventName: "WebMessagingEvent",  customAttributes: { emailAddress: emailAddress, brand: brand, language: language, country: country, baseURL: baseURL }})
 	  }
-	    
-	    Genesys("command", "Database.set", {
-		  messaging: {
-		    customAttributes: {
-		      testAttribute: testVariable
-		    }
-		  }
-		});
 		
 	  function toggleAndSend(){
 	    console.log("toggleAndSend invoked")
@@ -102,10 +103,19 @@
 <button id="custom-launcher2" onclick="toggleAndSend()">
   Toggle and Send Events
 </button>
+	
 <br><br>
+	
 <button id="clear-and-reload" onclick="clearAndReload()">
   Test button - Clear and reload page
 </button>
 
+<button id="product-qa-en" >
+	QA Product EN
+	</button>
+
+<button id = "product-qa-it" >
+	QA PRODUCT IT
+	</button>
 </body>
 </html>
