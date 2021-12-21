@@ -29,20 +29,12 @@
 	    console.log("the launcher is ready!");
 	  });
 	</script>
-	
-	<script>
-		Genesys("command", "Database.set", {
-		  messaging: {
-		    customAttributes: {
-		      testAttribute: "testData"
-		    }
-		  }
-		});
-	</script>
 </head>
 <body onLoad = "loadVariables()">
 	
 	<script type="text/javascript">
+	
+	var testVariable = "TestAttribute";
 	  
 	function toggleMessenger(){
 	    console.log("toggle messenger button clicked");
@@ -68,6 +60,14 @@
 	    Genesys("command", "Journey.record", {
 	       eventName: "WebMessagingEvent",  customAttributes: { emailAddress: emailAddress, brand: brand, language: language, country: country, baseURL: baseURL }})
 	  }
+	    
+	    Genesys("command", "Database.set", {
+		  messaging: {
+		    customAttributes: {
+		      testAttribute: testVariable
+		    }
+		  }
+		});
 		
 	  function toggleAndSend(){
 	    console.log("toggleAndSend invoked")
