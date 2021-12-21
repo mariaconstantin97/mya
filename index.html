@@ -12,7 +12,7 @@
 	<script type="text/javascript" charset="utf-8">
 	   let deploymentID;
 		
-	   document.getElementById('buttons').addEventListener('click', function(evt) {
+	   document.getElementsByTagName('button').addEventListener('click', function(evt) {
 		  var target = evt.target;
 		  if (target.id === 'product-qa-en') {
 		    deploymentID = '1d4cc368-adaf-4e90-9be1-860714b0e41f';
