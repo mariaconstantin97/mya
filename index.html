@@ -29,6 +29,16 @@
 	    console.log("the launcher is ready!");
 	  });
 	</script>
+	
+	<script>
+		Genesys("command", "Database.set", {
+		  messaging: {
+		    customAttributes: {
+		      testAttribute: "testData"
+		    }
+		  }
+		});
+	</script>
 </head>
 <body onLoad = "loadVariables()">
 	
