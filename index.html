@@ -9,25 +9,8 @@
 		}
 	</script>
 	
-</head>
-	
-<body onLoad = "loadVariables()">
-	
-	<script type="text/javascript" charset="utf-8">
-	   let deploymentID;
-		
-	   document.getElementsByTagName('button').addEventListener('click', function(evt) {
-		  var target = evt.target;
-		  if (target.id === 'product-qa-en') {
-		    deploymentID = '1d4cc368-adaf-4e90-9be1-860714b0e41f';
-		  } else if (target.id === 'product-qa-it') {
-		    deploymentID = '82b31bd4-5e0d-49e5-a880-b0ad08647d7b';
-		  } else{
-		  	deploymentID = '1d4cc368-adaf-4e90-9be1-860714b0e41f'
-		  }
-		}, false);
-		
-	  (function (g, e, n, es, ys) {
+	<script type="text/javascript">
+	(function (g, e, n, es, ys) {
 	    g['_genesysJs'] = e;
 	    g[e] = g[e] || function () {
 	      (g[e].q = g[e].q || []).push(arguments)
@@ -43,9 +26,11 @@
 	  Genesys("subscribe", "Launcher.ready" , function(o){
 	    console.log("the launcher is ready!");
 	  });
-		
 	</script>
 	
+</head>
+	
+<body onLoad = "loadVariables()">
 	
 	<script type="text/javascript">
 	  
