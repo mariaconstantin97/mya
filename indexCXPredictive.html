@@ -6,6 +6,7 @@
 		function loadVariables(){
 			var chromeLanguage = window.navigator.userLanguage || window.navigator.language;
 			document.getElementById("browserlanguage").innerHTML = chromeLanguage;
+			Genesys("command", "Launcher.hide");
 		}
 	</script>
 	
@@ -27,7 +28,6 @@
 	    console.log("the launcher is ready!");
 	  });
 		
-	  Genesys("command", "Launcher.hide");
 	</script>
 	
 </head>
