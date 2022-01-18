@@ -40,7 +40,6 @@
 		  });
 		  Genesys("subscribe", "Engage.inviteAccepted" , function(o){
 		    console.log("Invite accepted, sending events!");
-			Genesys("command", "Launcher.hide");
 		    sendEvents();
 		  });
 		  Genesys('subscribe', 'Journey.qualifiedWebMessagingOffer', (data) => {
