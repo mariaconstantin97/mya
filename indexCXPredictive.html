@@ -6,7 +6,6 @@
 		function loadVariables(){
 			var chromeLanguage = window.navigator.userLanguage || window.navigator.language;
 			document.getElementById("browserlanguage").innerHTML = chromeLanguage;
-			Genesys("command", "Launcher.hide");
 		}
 	</script>
 	
@@ -29,6 +28,26 @@
 	  });
 		
 	</script>
+		Genesys("subscribe", "Launcher.ready" , function(o){
+		    console.log("The queue works!");
+		  });
+		  Genesys("subscribe", "Engage.inviteOffered" , function(o){
+			console.log("Invite offered, sending events!");
+		    //send custom website events here
+		    sendEvents();
+		  });
+		  Genesys("subscribe", "Engage.inviteAccepted" , function(o){
+		    console.log("Invite accepted, sending events!");
+		    sendEvents();
+		  });
+		  Genesys('subscribe', 'Journey.qualifiedWebMessagingOffer', (data) => {
+		    console.log('Journey.qualifiedWebMessagingOffer event!!!')
+		    console.log('event data:', data)
+		  });
+		  Genesys("subscribe", "Journey.ready", function(){
+		    console.log("Journey ready event!!!");
+			<script>
+	</script>
 	
 </head>
 	
@@ -44,6 +63,7 @@
 		Genesys("command", "Messenger.close");
 	      }
 	    );
+		Genesys("command", "Launcher.hide");
 	  }
 		
 	  function sendEvents(){
