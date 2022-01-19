@@ -52,11 +52,12 @@
 		  });
 		
 		Genesys("subscribe", "Launcher.visible", function(){
-			Genesys("command", "Messenger.open");
+			console.log("Launcher is visible!!! messenger should be closed");
+			Genesys("command", "Messenger.close");
 		});
 		
 		Genesys("subscribe", "Launcher.hidden", function(){
-			Genesys("command", "Messenger.close");
+			Genesys("command", "Messenger.open");
 		});
 		
 	</script>
