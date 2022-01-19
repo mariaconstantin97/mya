@@ -34,6 +34,7 @@
 		    console.log("The queue works!");
 		  });
 		  Genesys("subscribe", "Engage.inviteOffered" , function(o){
+			  Genesys("command", "Launcher.hide");
 			console.log("Invite offered, sending events!");
 		    //send custom website events here
 		    sendEvents();
@@ -60,10 +61,9 @@
 	function toggleMessenger(){
 	    console.log("toggle messenger button clicked");
 	    Genesys("command", "Messenger.open", {},
-	      function(o){Genesys("command", "Launcher.hide");},  // if resolved
+	      function(o){},  // if resolved
 	      function(o){    // if rejected
 	    Genesys("command", "Messenger.close");
-	Genesys("command", "Launcher.show");
 	  });
 	  }
 		
