@@ -51,14 +51,7 @@
 		    console.log("Journey ready event!!!");
 		  });
 		
-		Genesys("command", "Messenger.open", {},
-	      		function(o){
-			Genesys("command", "Launcher.show")
-			},  // if resolved
-	     		function(o){    // if rejected
-	    		Genesys("command", "Messenger.close");
-			Genesys("command", "Launcher.hide");
-	  });
+		
 	</script>
 	
 </head>
