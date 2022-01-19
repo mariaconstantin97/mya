@@ -64,6 +64,8 @@
 	    Genesys("command", "Messenger.open", {},
 	      function(o){},  // if resolved
 	      function(o){    // if rejected
+		    Genesys("command", "Messenger.close");
+		    Genesys("command", "Launcher.show");
 	      });
 	  }
 		
@@ -81,16 +83,6 @@
 	    Genesys("command", "Journey.record", {
 	       eventName: "WebMessagingEvent",  customAttributes: { emailAddress: emailAddress, brand: brand, language: language, country: country, baseURL: baseURL }})
 	  }
-		
-		Genesys("subscribe", "Launcher.visible", function(){
-			console.log("Launcher is visible!!! messenger should be closed");
-			Genesys("command", "Messenger.close");
-		});
-		
-		Genesys("subscribe", "Launcher.hidden", function(){
-			console.log("Launcher is hidden!!! messenger should be open");
-			Genesys("command", "Messenger.open");
-		});
 		
 	  function toggleAndSend(){
 	    console.log("toggleAndSend invoked")
