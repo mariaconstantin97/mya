@@ -51,6 +51,13 @@
 		    console.log("Journey ready event!!!");
 		  });
 		
+		Genesys("subscribe", "Launcher.visible", function(){
+			Genesys("command", "Messenger.open");
+		});
+		
+		Genesys("subscribe", "Launcher.hidden", function(){
+			Genesys("command", "Messenger.close");
+		});
 		
 	</script>
 	
@@ -63,8 +70,11 @@
 	function toggleMessenger(){
 	    console.log("toggle messenger button clicked");
 	    Genesys("command", "Messenger.open", {},
-	      function(o){Genesys("command", "Launcher.show")
-			 },  // if resolved
+	      function(o){},  // if resolved
+	      function(o){    // if rejected
+		Genesys("command", "Messenger.close");
+	      }
+	    );
 	  }
 		
 	  function sendEvents(){
