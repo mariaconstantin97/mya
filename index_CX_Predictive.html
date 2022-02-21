@@ -34,7 +34,6 @@
 		    console.log("The queue works!");
 		  });
 		  Genesys("subscribe", "Engage.inviteOffered" , function(o){
-			  Genesys("command", "Launcher.hide");
 			console.log("Invite offered, sending events!");
 		    //send custom website events here
 		    sendEvents();
