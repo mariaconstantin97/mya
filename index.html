@@ -57,7 +57,7 @@
 	    console.log("Values " + brand + " " + emailAddress + " " + country + " " + language + " " + baseURL);
 
 	    Genesys("command", "Journey.record", {
-	       eventName: "WebMessagingEvent",  customAttributes: { emailAddress: emailAddress, brand: brand, language: language, country: country, baseURL: baseURL }})
+	       eventName: "WebMessagingEvent",  customAttributes: { brand: brand, language: language, country: country, baseURL: baseURL }})
 	  }
 		
 	  function toggleAndSend(){
