@@ -60,7 +60,7 @@
 	       eventName: "WebMessagingEvent",  customAttributes: { emailAddress: emailAddress, brand: brand, language: language, country: country, baseURL: baseURL }});
 		Genesys("command", "Database.set", { messaging: 
 		{ customAttributes: { emailAddress: emailAddress, brand: brand, language: language, country: country, baseURL: baseURL }}});
-		
+	  }	
 	  function toggleAndSend(){
 	    console.log("toggleAndSend invoked")
 	    toggleMessenger();
