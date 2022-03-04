@@ -56,11 +56,19 @@
 
 	    console.log("Values " + brand + " " + emailAddress + " " + country + " " + language + " " + baseURL);
 
-	    Genesys("command", "Journey.record", {
-	       eventName: "WebMessagingEvent",  customAttributes: { emailAddress: emailAddress, brand: brand, language: language, country: country, baseURL: baseURL }});
-		Genesys("command", "Database.set", { messaging: 
-		{ customAttributes: { emailAddress: emailAddress, brand: brand, language: language, country: country, baseURL: baseURL }}});
-	  }	
+	   Genesys("command", "Database.set", {
+		messaging: {
+		customAttributes: {
+		  //here we set attributes
+		  ATTR_country: country,
+		  ATTR_brand: brand,
+		  ATTR_language: language,
+		  ATTR_emailAddress: emailAddress,
+		  ATTR_baseURL: baseURL
+		}
+		}
+		});
+	  }
 	  function toggleAndSend(){
 	    console.log("toggleAndSend invoked")
 	    toggleMessenger();
