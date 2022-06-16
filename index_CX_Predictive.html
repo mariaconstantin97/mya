@@ -53,12 +53,14 @@
 			
 		  Genesys("subscribe", "Journey.ready", function(){
 		    console.log("Journey ready event!!!");
-			  setTimeout(function(){ 
+			 
+			  console.log("idle_for_45_s"); 
+		 });
+		
+		 setTimeout(function(){ 
 				  Genesys("command", "Journey.record", { eventName: "idle_for_45_s", customAttributes: { message: "Hesitate On Page" } }); 
 
 			  }, 45000); 
-			  console.log("idle_for_45_s"); 
-		 });
 	</script>
 	
 </head>
