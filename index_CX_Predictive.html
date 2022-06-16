@@ -53,11 +53,46 @@
 			
 		  Genesys("subscribe", "Journey.ready", function(){
 		    console.log("Journey ready event!!!");
-			setTimeout(function(){ 
-				Genesys("command", "Journey.record", { eventName: "idle_for_20_s", customAttributes: { message: "Hesitate On Page" } 
-								     }); 
-			}, 10000); 
-			console.log ("10 seconds event created");
+			 setTimeout(function(){ 
+
+			    Genesys("command", "Journey.record", { eventName: "idle_for_10_s", customAttributes: { message: "Hesitate On Page"}}); 
+
+			  }, 10000); 
+
+			  setTimeout(function(){ 
+				  Genesys("command", "Journey.record", { eventName: "idle_for_20_s", customAttributes: { message: "Hesitate On Page" } }); 
+
+			  }, 20000); 
+			  
+			  setTimeout(function(){ 
+				  Genesys("command", "Journey.record", { eventName: "idle_for_25_s", customAttributes: { message: "Hesitate On Page" } }); 
+
+			  }, 25000); 
+			  
+			  setTimeout(function(){ 
+				  Genesys("command", "Journey.record", { eventName: "idle_for_30_s", customAttributes: { message: "Hesitate On Page" } }); 
+
+			  }, 30000); 
+			  
+			  setTimeout(function(){ 
+				  Genesys("command", "Journey.record", { eventName: "idle_for_35_s", customAttributes: { message: "Hesitate On Page" } }); 
+
+			  }, 35000); 
+			  
+			  setTimeout(function(){ 
+				  Genesys("command", "Journey.record", { eventName: "idle_for_40_s", customAttributes: { message: "Hesitate On Page" } }); 
+
+			  }, 40000); 
+			  
+			  setTimeout(function(){ 
+				  Genesys("command", "Journey.record", { eventName: "idle_for_45_s", customAttributes: { message: "Hesitate On Page" } }); 
+
+			  }, 45000); 
+			  
+			  setTimeout(function(){ 
+				  Genesys("command", "Journey.record", { eventName: "idle_for_50_s", customAttributes: { message: "Hesitate On Page" } }); 
+
+			  }, 50000); 
 		 });
 	</script>
 	
