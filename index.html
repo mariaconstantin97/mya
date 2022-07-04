@@ -17,8 +17,10 @@
 		function changeDeploymentID(){
 			if (document.getElementById('be-fr').clicked == true){
 				var deploymentID = "5c52404a-d968-46b7-9e58-f7fcb06ad772"
+				document.getElementById("be-fr").value = "5c52404a-d968-46b7-9e58-f7fcb06ad772"
 			} else if ( document.getElementById('be-nl').clicked == true ){
 				var deploymentID = "5163c640-6c9c-44f1-94fb-7dd3031317af"
+				document.getElementById("be-nl").value = "5163c640-6c9c-44f1-94fb-7dd3031317af"
 			}
 		}
 	</script>
@@ -34,7 +36,7 @@
     ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
   })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js', {
     environment: 'euc1',
-    deploymentId: deploymentID
+    deploymentId: $.deploymentID
   });
 </script>
 	
@@ -63,7 +65,6 @@
 	    var emailAddress = document.getElementById("emailAddress").value;
 	    var baseURL = document.getElementById("baseURL").value;
 	    var fullURL = document.getElementById("fullURL").value;
-	    var deploymentID = document.getElementById("deploymentID").value;
 		
 
 	    console.log("Values " + brand + " " + emailAddress + " " + country + " " + language + " " + baseURL + " " + fullURL);
