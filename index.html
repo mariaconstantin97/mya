@@ -6,7 +6,11 @@
 		function loadVariables(){
 			var chromeLanguage = window.navigator.userLanguage || window.navigator.language;
 			document.getElementById("browserlanguage").innerHTML = chromeLanguage;
-	  		Genesys("command", "Launcher.hide");
+	  		if (chromeLanguage == "nl-BE" ) {
+				document.getElementById("language").value = "NL"	
+			} else if (chromeLanguage == "fr-BE") {
+				document.getElementById("language").value = "FR"	
+			}
 		}
 		
 		function changeDeployment(){
