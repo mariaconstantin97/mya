@@ -3,8 +3,6 @@
 <head>
 <title>Page Title</title>
 	<script type="text/javascript" charset="utf-8">
-		let deploymentID;
-		alert(deploymentID);
 		
 		function loadVariables(){
 			var chromeLanguage = window.navigator.userLanguage || window.navigator.language;
@@ -16,7 +14,8 @@
 			}
 		}
 		
-	function loadMessagingSnippet (){
+	function loadMessagingSnippet (deploymentID){
+		alert(deploymentID);
 	  (function (g, e, n, es, ys) {
 	    g['_genesysJs'] = e;
 	    g[e] = g[e] || function () {
@@ -37,6 +36,8 @@
 <body onLoad = "loadVariables()">
 	
 	<script type="text/javascript">
+	
+	let deploymentID;
 	
 	function changeDeploymentID() {
 		document.getElementById('be-fr').onclick = function() {
@@ -89,7 +90,7 @@
 	  }
 	  function toggleAndSend(){
 	    console.log("load snippet")
-	    loadMessagingSnippet();
+	    loadMessagingSnippet(deploymentID);
 	    console.log("toggleAndSend invoked")
 	    toggleMessenger();
 	    sendEvents();
