@@ -11,12 +11,6 @@
 			} else if (chromeLanguage == "fr-BE") {
 				document.getElementById("language").value = "FR"	
 			}
-			
-			if ( baseURL.includes("/fr-be/")){
-				document.getElementById("language").value = "NL"
-			} else if (baseURL.includes("/nl-be/")){
-				document.getElementById("language").value = "FR"
-			}
 		}
 		
 		function changeDeploymentID(){
@@ -68,7 +62,7 @@
 	    var emailAddress = document.getElementById("emailAddress").value;
 	    var baseURL = document.getElementById("baseURL").value;
 	    var fullURL = document.getElementById("fullURL").value;
-	    var deploymentID;
+	    var deploymentID = document.getElementById("deploymentID").value;
 		
 
 	    console.log("Values " + brand + " " + emailAddress + " " + country + " " + language + " " + baseURL + " " + fullURL);
@@ -122,7 +116,10 @@
 <input type="text" id="baseURL" value="https://electrolux.co.uk"><br><br>
 	
 <label> Full URL: </label>	
-<input type="text" id="fullURL" value="">
+<input type="text" id="fullURL" value=""><br><br>
+	
+<label> DeploymentID: </label>	
+<input type="text" id="deploymentID" value=""><br><br>
 	
 <br><br><br>
 
