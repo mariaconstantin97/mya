@@ -75,8 +75,6 @@
 	    console.log("toggleAndSend invoked")
 	    toggleMessenger();
 	    sendEvents();
-	    send_button = document.getElementsByClassName("Cx-MuiButtonBase-root Cx-MuiIconButton-root mxg-conversation-sendbtn Cx-messenger-36 Mui-disabled Mui-disabled");
-	    send_button.title = "Invia"
 	  }
 		
 	  function clearAndReload(){
@@ -110,13 +108,12 @@
 <label> Full URL: </label>	
 <input type="text" id="fullURL" value="">
 	
-<br><br>
+<br><br><br>
 
-<button id="custom-launcher" onclick = "toggleMessenger()">
+<button  id="custom-launcher" onclick = "toggleMessenger()">
 	Toggle Messenger
 </button>
 
-<br><br>
 <button id="custom-launcher2" onclick="toggleAndSend()">
   Toggle and Send Events
 </button>
@@ -127,12 +124,13 @@
   Test button - Clear and reload page
 </button>
 
-<button id="product-qa-en" >
-	QA Product EN
+<br><br> <br>
+<button id="be-fr" >
+	BR FR
 	</button>
 
-<button id = "product-qa-it" >
-	QA PRODUCT IT
+<button id = "be-nl" >
+	BE NL
 	</button>
 </body>
 </html>
