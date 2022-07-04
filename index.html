@@ -8,9 +8,11 @@
 			var chromeLanguage = window.navigator.userLanguage || window.navigator.language;
 			document.getElementById("browserlanguage").innerHTML = chromeLanguage;
 	  		if (chromeLanguage == "nl-BE" ) {
-				document.getElementById("language").value = "NL";	
+				document.getElementById("language").value = "NL";
+				document.getElementById("country").value = "BE";
 			} else if (chromeLanguage == "fr-BE") {
-				document.getElementById("language").value = "FR";	
+				document.getElementById("language").value = "FR";
+				document.getElementById("country").value = "BE";
 			}
 		}
 		
