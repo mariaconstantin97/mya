@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Page Title</title>
-	<script>
+	<script type="text/javascript" charset="utf-8">
 		function loadVariables(){
 			var chromeLanguage = window.navigator.userLanguage || window.navigator.language;
 			document.getElementById("browserlanguage").innerHTML = chromeLanguage;
@@ -13,9 +13,6 @@
 			}
 		}
 		
-	</script>
-	
-	<script type="text/javascript" charset="utf-8">
 	let deploymentID;
 	document.getElementById('be-fr').onclick = function() {
 		document.getElementById("deploymentID").value = "5c52404a-d968-46b7-9e58-f7fcb06ad772";
@@ -27,6 +24,7 @@
 		deploymentID = "5163c640-6c9c-44f1-94fb-7dd3031317af";
 	}
 		
+	function loadMessagingSnippet (){
 	  (function (g, e, n, es, ys) {
 	    g['_genesysJs'] = e;
 	    g[e] = g[e] || function () {
@@ -39,6 +37,7 @@
 	    environment: 'euc1',
 	    deploymentId: deploymentID
 	  });
+	}
 </script>
 	
 </head>
@@ -85,6 +84,8 @@
 		});
 	  }
 	  function toggleAndSend(){
+	    console.log("load snippet")
+	    loadMessagingSnippet
 	    console.log("toggleAndSend invoked")
 	    toggleMessenger();
 	    sendEvents();
