@@ -3,6 +3,9 @@
 <head>
 <title>Page Title</title>
 	<script type="text/javascript" charset="utf-8">
+		let deploymentID;
+		alert(deploymentID);
+		
 		function loadVariables(){
 			var chromeLanguage = window.navigator.userLanguage || window.navigator.language;
 			document.getElementById("browserlanguage").innerHTML = chromeLanguage;
@@ -34,8 +37,6 @@
 <body onLoad = "loadVariables()">
 	
 	<script type="text/javascript">
-	
-	let deploymentID;
 	
 	function changeDeploymentID() {
 		document.getElementById('be-fr').onclick = function() {
