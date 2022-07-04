@@ -8,6 +8,10 @@
 			document.getElementById("browserlanguage").innerHTML = chromeLanguage;
 	  		Genesys("command", "Launcher.hide");
 		}
+		
+		function changeDeployment(){
+			
+		}
 	</script>
 	
 	<script type="text/javascript" charset="utf-8">
@@ -49,8 +53,9 @@
 	    var language = document.getElementById("language").value;
 	    var emailAddress = document.getElementById("emailAddress").value;
 	    var baseURL = document.getElementById("baseURL").value;
+	    var fullURL = document.getElementById("fullURL").value;
 
-	    console.log("Values " + brand + " " + emailAddress + " " + country + " " + language + " " + baseURL);
+	    console.log("Values " + brand + " " + emailAddress + " " + country + " " + language + " " + baseURL + " " + fullURL);
 
 	   Genesys("command", "Database.set", {
 		messaging: {
@@ -61,6 +66,7 @@
 		  CHAT_language: language,
 		  CHAT_emailAddress: emailAddress,
 		  CHAT_baseURL: baseURL
+		  CHAT_fullURL: fullURL;
 		}
 		}
 		});
@@ -80,7 +86,7 @@
 		
 	</script>
 	
-<h1>This is a test</h1>
+<h1><middlThis is a test page</h1>
 <h2>Retrieve preferred language from browser</h2>
 <h2> The preferred language is: <span id="browserlanguage"></span></h2>
 
