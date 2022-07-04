@@ -11,10 +11,20 @@
 			} else if (chromeLanguage == "fr-BE") {
 				document.getElementById("language").value = "FR"	
 			}
+			
+			if ( baseURL.includes("/fr-be/")){
+				document.getElementById("language").value = "NL"
+			} else if (baseURL.includes("/nl-be/")){
+				document.getElementById("language").value = "FR"
+			}
 		}
 		
-		function changeDeployment(){
-			
+		function changeDeploymentID(){
+			if (document.getElementById('be-fr').clicked == true){
+				var deploymentID = "5c52404a-d968-46b7-9e58-f7fcb06ad772"
+			} else if ( document.getElementById('be-nl').clicked == true ){
+				var deploymentID = "5163c640-6c9c-44f1-94fb-7dd3031317af"
+			}
 		}
 	</script>
 	
@@ -29,7 +39,7 @@
     ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
   })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js', {
     environment: 'euc1',
-    deploymentId: '5c52404a-d968-46b7-9e58-f7fcb06ad772'
+    deploymentId: '$.deploymentID'
   });
 </script>
 	
@@ -58,6 +68,8 @@
 	    var emailAddress = document.getElementById("emailAddress").value;
 	    var baseURL = document.getElementById("baseURL").value;
 	    var fullURL = document.getElementById("fullURL").value;
+	    var deploymentID;
+		
 
 	    console.log("Values " + brand + " " + emailAddress + " " + country + " " + language + " " + baseURL + " " + fullURL);
 
@@ -129,11 +141,12 @@
 </button>
 
 <br><br> <br>
-<button id="be-fr" >
+	
+<button id="be-fr" onclick = "changeDeploymentID()" >
 	BR FR
 	</button>
 
-<button id = "be-nl" >
+<button id = "be-nl" onclick = "changeDeploymentID()" >
 	BE NL
 	</button>
 </body>
