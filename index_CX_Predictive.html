@@ -38,7 +38,17 @@
 		  Genesys("subscribe", "Engage.inviteOffered" , function(o){
 			console.log("Invite offered, sending events!");
 		    //send custom website events here
-		    sendEvents();
+		    Genesys("command", "Database.set", { 
+		     messaging: { 
+		     customAttributes: { 
+  		     //here we set attributes 
+  	             CHAT_country: country, 
+  	             CHAT_language: language, 
+                     CHAT_brand: brand, 
+ 	             CHAT_emailAddress: emailAddress, 
+  		     CHAT_baseURL: baseURL 
+
+}}}); 
 		  });
 			
 		  Genesys("subscribe", "Engage.inviteAccepted" , function(o){
