@@ -44,15 +44,14 @@
 		  Genesys("subscribe", "Engage.inviteAccepted" , function(o){
 		    console.log("Invite accepted, sending events!");
 		    Genesys("command", "Database.set", { 
-		messaging: { 
-		customAttributes: { 
-  		//here we set attributes 
-  	           CHAT_country: country, 
-  	                      CHAT_language: language, 
-
-                          CHAT_brand: brand, 
- 	               CHAT_emailAddress: emailAddress, 
-  		   CHAT_baseURL: baseURL 
+		     messaging: { 
+		     customAttributes: { 
+  		     //here we set attributes 
+  	             CHAT_country: country, 
+  	             CHAT_language: language, 
+                     CHAT_brand: brand, 
+ 	             CHAT_emailAddress: emailAddress, 
+  		     CHAT_baseURL: baseURL 
 
 }}}); 
 		  });
