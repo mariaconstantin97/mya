@@ -54,7 +54,7 @@
 		  Genesys("subscribe", "Journey.ready", function(){
 		    console.log("Journey ready event!!!");
 			  const myTimeout = setTimeout(function(){ 
-			  Genesys("command", "Journey.record", { eventName: "idle_for_10_s", customAttributes: { message: "Hesitate On Page" } }); 
+			  Genesys("command", "Journey.record", { eventName: "idle_for_10_s", customAttributes: { message: "Hesitate On Page 10seconds" } }); 
 				  clearTimeout(myTimeout);
 		  }, 10000); 
 		 });
