@@ -58,20 +58,6 @@
 <body onLoad = "loadVariables()">
 	
 	<script type="text/javascript">
-	
-	let deploymentID;
-	
-	function changeDeploymentID() {
-		document.getElementById('be-fr').onclick = function() {
-			document.getElementById("deploymentID").value = "5c52404a-d968-46b7-9e58-f7fcb06ad772";
-			deploymentID = '5c52404a-d968-46b7-9e58-f7fcb06ad772';
-		}
-
-		document.getElementById('be-nl').onclick = function() {
-			document.getElementById("deploymentID").value = "5163c640-6c9c-44f1-94fb-7dd3031317af";
-			deploymentID = '5163c640-6c9c-44f1-94fb-7dd3031317af';
-		}
-	}
 	  
 	function toggleMessenger(){
 	    console.log("toggle messenger button clicked");
@@ -111,8 +97,6 @@
 		});
 	  }
 	  function toggleAndSend(){
-	    console.log("load snippet")
-	    loadMessagingSnippet(deploymentID);
 	    console.log("toggleAndSend invoked")
 	    toggleMessenger();
 	    sendEvents();
@@ -168,14 +152,5 @@
   Test button - Clear and reload page
 </button>
 
-<br><br> <br>
-	
-<button id="be-fr" onclick = "changeDeploymentID()" >
-	BR FR
-	</button>
-
-<button id = "be-nl" onclick = "changeDeploymentID()" >
-	BE NL
-	</button>
 </body>
 </html>
