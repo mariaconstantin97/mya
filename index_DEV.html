@@ -105,6 +105,60 @@
 	    window.location.reload();
 	  }
 		
+	  function UK(){
+	  	document.getElementById("language").value = "UK";
+		document.getElementById("country").value = "UK";
+		document.getElementById("baseURL").value = "https://www.electrolux.co.uk";
+	  }
+		
+	  function IT(){
+		document.getElementById("language").value = "IT";
+		document.getElementById("country").value = "IT";
+		document.getElementById("baseURL").value = "https://www.electrolux.it";
+	  }
+		
+	function ES(){
+		document.getElementById("language").value = "ES";
+		document.getElementById("country").value = "ES";
+		document.getElementById("baseURL").value = "https://www.electrolux.es";
+	}
+		
+	function PT(){
+		document.getElementById("language").value = "PT";
+		document.getElementById("country").value = "PT";
+		document.getElementById("baseURL").value = "https://www.electrolux.pt";
+	}
+		
+	function NO(){
+		document.getElementById("language").value = "NO";
+		document.getElementById("country").value = "NO";
+		document.getElementById("baseURL").value = "https://www.electrolux.no";
+	}
+	
+	function PL(){
+		document.getElementById("language").value = "PL";
+		document.getElementById("country").value = "PL";
+		document.getElementById("baseURL").value = "https://www.electrolux.pl";
+	}
+	
+	function FR(){
+		document.getElementById("language").value = "FR";
+		document.getElementById("country").value = "FR";
+		document.getElementById("baseURL").value = "https://www.electrolux.fr";
+	}
+	
+	function BE-FR(){
+		document.getElementById("language").value = "FR";
+		document.getElementById("country").value = "BE";
+		document.getElementById("baseURL").value = "https://www.electrolux.be/fr-be";
+	}
+	
+	function BE-NL(){
+		document.getElementById("language").value = "NL";
+		document.getElementById("country").value = "BE";
+		document.getElementById("baseURL").value = "https://www.electrolux.be/nl-be";
+	}
+		
 	</script>
 	
 <h1>This is a test page</h1>
@@ -145,6 +199,40 @@
 	
 <button id="clear-and-reload" onclick="clearAndReload()">
   Test button - Clear and reload page
+</button>
+
+<br><br>
+	
+<button id="UK" onclick="UK()">
+  UK
+</button>
+	
+<button id="IT" onclick="IT()">
+  IT
+</button>
+	
+<button id="ES" onclick="ES()">
+  ES
+</button>
+	
+<button id="PT" onclick="PT()">
+  PT
+</button>
+	
+<button id="NO" onclick="NO()">
+  NO
+</button>
+	
+<button id="PL" onclick="PL()">
+  PL
+</button>
+	
+<button id="BE-NL" onclick="BE-NL()">
+  BE-NL
+</button>
+
+<button id="BE-FR" onclick="BE-FR()">
+  BR-FR
 </button>
 
 </body>
