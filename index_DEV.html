@@ -6,6 +6,7 @@
 		
 		function loadVariables(){
 			var chromeLanguage = window.navigator.userLanguage || window.navigator.language;
+			document.getElementById('textboxid').style.height="200px";
 			document.getElementById("browserlanguage").innerHTML = chromeLanguage;
 			document.getElementById("fullURL").value = window.location.href;
 	  		if (chromeLanguage == "nl-BE" ) {
