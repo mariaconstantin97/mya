@@ -32,6 +32,14 @@
 				document.getElementById("language").value = "PL";
 				document.getElementById("country").value = "PL";
 				document.getElementById("baseURL").value = "https://www.electrolux.pl";
+			} else if (chromeLanguage == "cs") {
+				document.getElementById("language").value = "CS";
+				document.getElementById("country").value = "CZ";
+				document.getElementById("baseURL").value = "https://www.electrolux.cz";
+			} else if (chromeLanguage == "fi") {
+				document.getElementById("language").value = "FI";
+				document.getElementById("country").value = "FI";
+				document.getElementById("baseURL").value = "https://www.electrolux.fi";
 			}
 				
 		}
@@ -159,6 +167,18 @@
 		document.getElementById("baseURL").value = "https://www.electrolux.be/nl-be";
 	}
 		
+	function FI(){
+		document.getElementById("language").value = "FI";
+		document.getElementById("country").value = "FI";
+		document.getElementById("baseURL").value = "https://www.electrolux.fi";
+	}
+		
+	function CZ(){
+		document.getElementById("language").value = "CZ";
+		document.getElementById("country").value = "CS";
+		document.getElementById("baseURL").value = "https://www.electrolux.cz";
+	}
+		
 	</script>
 	
 <h1>This is a test page</h1>
@@ -233,6 +253,14 @@
 
 <button id="BE-FR" onclick="BE-FR()">
   BR-FR
+</button>
+
+<button id="CZ" onclick=CZZ()">
+  CZ
+</button>
+	
+<button id="FI" onclick="FI()">
+  FI
 </button>
 
 </body>
