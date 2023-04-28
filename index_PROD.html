@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+	<script type="text/javascript" charset="utf-8">
+		
+		function loadVariables(){
+			var chromeLanguage = window.navigator.userLanguage || window.navigator.language;
+			document.getElementById("browserlanguage").innerHTML = chromeLanguage;
+			document.getElementById("fullURL").value = window.location.href;
+	  		if (chromeLanguage == "nl-BE" ) {
+				document.getElementById("language").value = "NL";
+				document.getElementById("country").value = "BE";
+				document.getElementById("baseURL").value = "https://www.electrolux.be/nl-be";
+			} else if (chromeLanguage == "fr-BE") {
+				document.getElementById("language").value = "FR";
+				document.getElementById("country").value = "BE";
+				document.getElementById("baseURL").value = "https://www.electrolux.be/fr-be";
+			} else if (chromeLanguage == "es-ES") {
+				document.getElementById("language").value = "ES";
+				document.getElementById("country").value = "ES";
+				document.getElementById("baseURL").value = "https://www.electrolux.es";
+			} else if (chromeLanguage == "pt-BR") {
+				document.getElementById("language").value = "PT";
+				document.getElementById("country").value = "PT";
+				document.getElementById("baseURL").value = "https://www.electrolux.pt";
+			}else if (chromeLanguage == "fr-FR") {
+				document.getElementById("language").value = "FR";
+				document.getElementById("country").value = "FR";
+				document.getElementById("baseURL").value = "https://www.electrolux.fr";
+			} else if (chromeLanguage == "pl") {
+				document.getElementById("language").value = "PL";
+				document.getElementById("country").value = "PL";
+				document.getElementById("baseURL").value = "https://www.electrolux.pl";
+			} else if (chromeLanguage == "cs") {
+				document.getElementById("language").value = "CS";
+				document.getElementById("country").value = "CZ";
+				document.getElementById("baseURL").value = "https://www.electrolux.cz";
+			} else if (chromeLanguage == "fi") {
+				document.getElementById("language").value = "FI";
+				document.getElementById("country").value = "FI";
+				document.getElementById("baseURL").value = "https://www.electrolux.fi";
+			} else if (chromeLanguage == "cs") {
+				document.getElementById("language").value = "CS";
+				document.getElementById("country").value = "CZ";
+				document.getElementById("baseURL").value = "https://www.electrolux.cz";
+			}else if (chromeLanguage == "sk") {
+				document.getElementById("language").value = "SK";
+				document.getElementById("country").value = "SK";
+				document.getElementById("baseURL").value = "https://www.electrolux.sk";
+			} else if (fullURL.includes(".ie")) == "fi") {
+				document.getElementById("language").value = "EN";
+				document.getElementById("country").value = "IE";
+				document.getElementById("baseURL").value = "https://www.electrolux.ie";
+			}
+				
+		}
+		
+	  (function (g, e, n, es, ys) {
+	    g['_genesysJs'] = e;
+	    g[e] = g[e] || function () {
+	      (g[e].q = g[e].q || []).push(arguments)
+	    };
+	    g[e].t = 1 * new Date();
+	    g[e].c = es;
+	    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+	  })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js', {
+	    environment: 'euc1',
+	    deploymentId: '9edff453-fd8c-46da-8e31-fae0d454e912'
+	  });
+
+</script>
+	
+</head>
+	
+<body onLoad = "loadVariables()">
+	
+	<script type="text/javascript">
+	  
+	function toggleMessenger(){
+	    console.log("toggle messenger button clicked");
+	    Genesys("command", "Messenger.open", {},
+	      function(o){},  // if resolved
+	      function(o){    // if rejected
+		Genesys("command", "Messenger.close");
+	      }
+	    );
+	  }
+		
+	  function sendEvents(){
+	    console.log("sendEvents invoked");
+	
+	    var brand = document.getElementById("brand").value;
+	    var country = document.getElementById("country").value;
+	    var language = document.getElementById("language").value;
+	    var emailAddress = document.getElementById("emailAddress").value;
+	    var baseURL = document.getElementById("baseURL").value;
+	    var fullURL = window.location.href;
+		
+
+	    console.log("Values " + brand + " " + emailAddress + " " + country + " " + language + " " + baseURL + " " + fullURL);
+
+	   Genesys("command", "Database.set", {
+		messaging: {
+		customAttributes: {
+		  //here we set attributes
+		  CHAT_country: country,
+		  CHAT_brand: brand,
+		  CHAT_language: language,
+		  CHAT_emailAddress: emailAddress,
+		  CHAT_baseURL: baseURL,
+		  CHAT_fullURL: fullURL
+		}
+		}
+		});
+	  }
+	  function toggleAndSend(){
+	    console.log("toggleAndSend invoked")
+	    toggleMessenger();
+	    sendEvents();
+	  }
+		
+	  function clearAndReload(){
+	    localStorage.clear();
+	    window.location.reload();
+	  }
+		
+	  function UK(){
+	  	document.getElementById("language").value = "UK";
+		document.getElementById("country").value = "UK";
+		document.getElementById("baseURL").value = "https://www.electrolux.co.uk";
+	  }
+		
+	  function IT(){
+		document.getElementById("language").value = "IT";
+		document.getElementById("country").value = "IT";
+		document.getElementById("baseURL").value = "https://www.electrolux.it";
+	  }
+		
+	function ES(){
+		document.getElementById("language").value = "ES";
+		document.getElementById("country").value = "ES";
+		document.getElementById("baseURL").value = "https://www.electrolux.es";
+	}
+		
+	function PT(){
+		document.getElementById("language").value = "PT";
+		document.getElementById("country").value = "PT";
+		document.getElementById("baseURL").value = "https://www.electrolux.pt";
+	}
+		
+	function NO(){
+		document.getElementById("language").value = "NO";
+		document.getElementById("country").value = "NO";
+		document.getElementById("baseURL").value = "https://www.electrolux.no";
+	}
+	
+	function PL(){
+		document.getElementById("language").value = "PL";
+		document.getElementById("country").value = "PL";
+		document.getElementById("baseURL").value = "https://www.electrolux.pl";
+	}
+	
+	function FR(){
+		document.getElementById("language").value = "FR";
+		document.getElementById("country").value = "FR";
+		document.getElementById("baseURL").value = "https://www.electrolux.fr";
+	}
+	
+	function BE_FR(){
+		document.getElementById("language").value = "FR";
+		document.getElementById("country").value = "BE";
+		document.getElementById("baseURL").value = "https://www.electrolux.be/fr-be";
+	}
+	
+	function BE_NL(){
+		document.getElementById("language").value = "NL";
+		document.getElementById("country").value = "BE";
+		document.getElementById("baseURL").value = "https://www.electrolux.be/nl-be";
+	}
+		
+	function FI(){
+		document.getElementById("language").value = "FI";
+		document.getElementById("country").value = "FI";
+		document.getElementById("baseURL").value = "https://www.electrolux.fi";
+	}
+		
+	function CZ(){
+		document.getElementById("language").value = "CZ";
+		document.getElementById("country").value = "CS";
+		document.getElementById("baseURL").value = "https://www.electrolux.cz";
+	}
+    
+    function SK(){
+		document.getElementById("language").value = "SK";
+		document.getElementById("country").value = "SK";
+		document.getElementById("baseURL").value = "https://www.electrolux.sk";
+	}
+    function IE(){
+		document.getElementById("language").value = "EN";
+		document.getElementById("country").value = "IE";
+		document.getElementById("baseURL").value = "https://www.electrolux.ie";
+	}
+		
+	</script>
+	
+<h1>This is a test page</h1>
+<h2>Retrieve preferred language from browser</h2>
+<h2> The preferred language is: <span id="browserlanguage"></span></h2>
+	
+<br><br>
+
+	<label> Email: </label>
+<input type="email" id="emailAddress" value="UNKNOWN"><br><br>
+	
+<label> Brand: </label>	
+<input type="text" id="brand" value="Electrolux"><br><br>
+	
+<label> Language: </label>	
+<input type="text" id="language" value="EN"><br><br>
+	
+<label> Country: </label>	
+<input type="text" id="country" value="UK"><br><br>
+	
+<label> BaseURL: </label>	
+<input type="text" id="baseURL" value="https://electrolux.co.uk"><br><br>
+	
+<label> Full URL: </label>	
+<input type="text" id="fullURL" value=""><br><br>
+	
+<br><br><br>
+
+<button  id="custom-launcher" onclick = "toggleMessenger()">
+	Toggle Messenger
+</button>
+
+<button id="custom-launcher2" onclick="toggleAndSend()">
+  Toggle and Send Events
+</button>
+	
+<br><br>
+	
+<button id="clear-and-reload" onclick="clearAndReload()">
+  Test button - Clear and reload page
+</button>
+
+<br><br>
+	
+<button id="UK" onclick="UK()">
+  UK
+</button>
+	
+<button id="IT" onclick="IT()">
+  IT
+</button>
+	
+<button id="ES" onclick="ES()">
+  ES
+</button>
+	
+<button id="PT" onclick="PT()">
+  PT
+</button>
+	
+<button id="NO" onclick="NO()">
+  NO
+</button>
+	
+<button id="PL" onclick="PL()">
+  PL
+</button>
+	
+<button id="BE-NL" onclick="BE_NL()">
+  BE-NL
+</button>
+
+<button id="BE-FR" onclick="BE_FR()">
+  BR-FR
+</button>
+
+<button id="CZ" onclick=CZZ()">
+  CZ
+</button>
+	
+<button id="FI" onclick="FI()">
+  FI
+</button>
+
+<button id="SK" onclick="SK()">
+  FI
+</button>
+                              
+<button id="IE" onclick="IE()">
+  FI
+</button>                             
+
+</body>
+</html>
