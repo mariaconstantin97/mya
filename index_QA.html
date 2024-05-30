@@ -83,9 +83,10 @@
 	    var emailAddress = document.getElementById("emailAddress").value;
 	    var baseURL = document.getElementById("baseURL").value;
 	    var fullURL = window.location.href;
+	    var conversationID = document.getElementById("conversationID").value;
 		
 
-	    console.log("Values " + brand + " " + emailAddress + " " + country + " " + language + " " + baseURL + " " + fullURL);
+	    console.log("Values " + brand + " " + emailAddress + " " + country + " " + language + " " + baseURL + " " + fullURL + " " + conversationID);
 
 	   Genesys("command", "Database.set", {
 		messaging: {
@@ -96,7 +97,8 @@
 		  CHAT_language: language,
 		  CHAT_emailAddress: emailAddress,
 		  CHAT_baseURL: baseURL,
-		  CHAT_fullURL: fullURL
+		  CHAT_fullURL: fullURL,
+		  CHAT_conversationID: conversationID
 		}
 		}
 		});
@@ -203,6 +205,9 @@
 	
 <label> Full URL: </label>	
 <input type="text" id="fullURL" value=""><br><br>
+
+<label> Conversation ID </label>
+<input type="text" id="conversationID" value=""><br><br>
 	
 <br><br><br>
 
