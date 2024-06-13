@@ -69,19 +69,19 @@
 		  Genesys('subscribe', 'Journey.qualifiedWebMessagingOffer', (data) => {
 		    console.log('Journey.qualifiedWebMessagingOffer event!!!')
 		    console.log('event data:', data)
+			  Genesys("command", "Database.set", { 
+			     messaging: { 
+			     customAttributes: { 
+	  		     //here we set attributes 
+	  	             CHAT_country: country, 
+	  	             CHAT_language: language, 
+	                     CHAT_brand: brand, 
+	 	             CHAT_emailAddress: emailAddress, 
+	  		     CHAT_baseURL: baseURL 
+				}}});
 		  });
 		
-		   Genesys("command", "Database.set", { 
-		     messaging: { 
-		     customAttributes: { 
-  		     //here we set attributes 
-  	             CHAT_country: country, 
-  	             CHAT_language: language, 
-                     CHAT_brand: brand, 
- 	             CHAT_emailAddress: emailAddress, 
-  		     CHAT_baseURL: baseURL 
-
-}}})
+		   
 		
 	</script>
 	
